@@ -1,45 +1,72 @@
-# EX01 Developing a Simple Webserver
-## Date:
+# Developing a Simple Webserver
 
-## AIM:
-To develop a simple webserver to serve html pages and display the Windows Specifications of your Laptop.
+# AIM:
+
+To develop a simple webserver to serve html programming pages.
 
 ## DESIGN STEPS:
-### Step 1: 
-HTML content creation.
+
+### Step 1:
+
+HTML content creation is done
 
 ### Step 2:
-Design of webserver workflow.
+
+Design of webserver workflow
 
 ### Step 3:
-Implementation using Python code.
+
+Implementation using Python code
 
 ### Step 4:
-Import the necessary modules.
+
+Serving the HTML pages.
 
 ### Step 5:
-Define a custom request handler.
 
-### Step 6:
-Start an HTTP server on a specific port.
-
-### Step 7:
-Run the Python script to serve web pages.
-
-### Step 8:
-Serve the HTML pages.
-
-### Step 9:
-Start the server script and check for errors.
-
-### Step 10:
-Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
+Testing the webserver
 
 ## PROGRAM:
+```py
+from http.server import HTTPServer,BaseHTTPRequestHandler
 
+content='''
+<!doctype html>
+<html>
+<head>
+<title> My Web Server</title>
+</head>
+<body>
+<h1>Top Five Web Application Development Frameworks</h1>
+<h2>1.Django</h2>
+<h2>2. MEAN Stack</h2>
+<h2>3. React </h2>
+<h2>4.Ruby on Rails</h2>
+<h2>5.Laravel </h2>
+</body>
+</html>
+'''
 
+class MyServer(BaseHTTPRequestHandler):
+    def do_GET(self):
+        print("Get request received...")
+        self.send_response(200) 
+        self.send_header("content-type", "text/html")       
+        self.end_headers()
+        self.wfile.write(content.encode())
+
+print("This is my webserver") 
+server_address =('',8000)
+httpd = HTTPServer(server_address,MyServer)
+httpd.serve_forever()
+```
 ## OUTPUT:
+### Server output
+<img width="410" height="896" alt="image" src="https://github.com/user-attachments/assets/da972116-bf75-4e1a-9e26-5d0a9c3be405" />
 
+
+###Client output
+<img width="430" height="902" alt="image" src="https://github.com/user-attachments/assets/73408a28-b9c0-4b55-b7fa-29d2b8fa4b6e" />
 
 ## RESULT:
-The program for implementing simple webserver is executed successfully.
+The	 program is executed succesfully
