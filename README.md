@@ -65,7 +65,7 @@ httpd.serve_forever()
 <img width="410" height="896" alt="image" src="https://github.com/user-attachments/assets/da972116-bf75-4e1a-9e26-5d0a9c3be405" />
 
 
-###Client output
+### Client output
 <img width="430" height="902" alt="image" src="https://github.com/user-attachments/assets/73408a28-b9c0-4b55-b7fa-29d2b8fa4b6e" />
 
 ## RESULT:
